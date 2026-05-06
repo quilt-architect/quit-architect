@@ -53,7 +53,6 @@
         .hero h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--brand-primary); }
         .hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 40px auto; color: #555; }
 
-        /* BUTTON STYLING */
         .btn {
             padding: 16px 32px; font-size: 1.1rem; font-weight: 700;
             border-radius: 50px; cursor: pointer; text-decoration: none;
@@ -65,26 +64,6 @@
         .btn-mac { background-color: var(--brand-secondary); }
         
         .btn:not(.disabled):hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        /* COMING SOON / DISABLED STATE */
-        .btn.disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            filter: grayscale(0.5);
-            pointer-events: none;
-        }
-
-        .coming-soon-badge {
-            display: block;
-            font-size: 0.8rem;
-            background: #333;
-            color: #fff;
-            padding: 2px 10px;
-            border-radius: 10px;
-            margin-top: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
 
         .gallery { padding: 60px 20px; text-align: center; background: white; }
         .tab-container { max-width: 1200px; margin: 0 auto; }
@@ -114,9 +93,35 @@
         .screenshot-label { margin-top: 12px; font-weight: 600; color: #555; font-size: 0.95rem; }
 
         .story-section { padding: 80px 20px; background-color: white; border-top: 1px solid #eee; }
-        .story-container { max-width: 800px; margin: 0 auto; text-align: center; }
-        .story-container h2 { color: var(--brand-primary); font-size: 2.5rem; }
-        .story-content { text-align: left; margin-top: 30px; font-size: 1.1rem; color: #444; }
+        .story-container { max-width: 1000px; margin: 0 auto; text-align: center; }
+        .story-container h2 { color: var(--brand-primary); font-size: 2.5rem; margin-bottom: 20px;}
+        
+        .proof-subtitle { font-size: 1.2rem; color: #666; margin-bottom: 40px; font-style: italic; }
+
+        .story-proof-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            margin-bottom: 50px;
+        }
+
+        .story-img-card { text-align: center; }
+        .story-img-card img { 
+            width: 100%; 
+            border-radius: 10px; 
+            height: auto; 
+            max-height: 600px;
+            object-fit: contain; 
+            border: 1px solid #ddd;
+        }
+        .story-img-card p { font-weight: bold; margin-top: 15px; font-size: 1.1rem; color: var(--brand-secondary); }
+
+        .story-content { text-align: left; font-size: 1.1rem; color: #444; max-width: 800px; margin: 0 auto; }
         
         .signature { 
             font-family: 'Segoe Script', 'Apple Chancery', cursive; 
@@ -171,6 +176,20 @@
 
         footer { text-align: center; padding: 60px 20px; color: #888; background: white; border-top: 1px solid #eee; }
         .contact-link { color: var(--brand-primary); font-weight: bold; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 20px; flex-direction: column; gap: 10px; }
+            .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; font-size: 0.85rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .button-group { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+            .button-group div { margin-left: 0 !important; width: 100%; max-width: 300px; }
+            .btn { width: 100%; justify-content: center; box-sizing: border-box; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .pricing-card { padding: 30px 20px; }
+            .price { font-size: 2.5rem; }
+            .story-proof-visual { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -212,29 +231,17 @@
                 </div>
 
                 <div id="pc" class="gallery-grid active">
-                    <div class="screenshot-container"><img src="pc-screenshot1png.png" class="app-screenshot"><div class="screenshot-label">Main Workspace</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot7.png" class="app-screenshot"><div class="screenshot-label">Drawing Tools</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot9.png" class="app-screenshot"><div class="screenshot-label">Patterning Engine</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot10.png" class="app-screenshot"><div class="screenshot-label">Final Visualization</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot4.png" class="app-screenshot"><div class="screenshot-label">Color Swatching</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot6.png" class="app-screenshot"><div class="screenshot-label">Fabric Requirements</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot3.png" class="app-screenshot"><div class="screenshot-label">Assembly Instructions</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot.png" class="app-screenshot"><div class="screenshot-label">Visual Assembly Map</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot2.png" class="app-screenshot"><div class="screenshot-label">FPP PDF Templates</div></div>
-                    <div class="screenshot-container"><img src="pc-screenshot8.png" class="app-screenshot"><div class="screenshot-label">Fabric Cutting Guides</div></div>
+                    <div class="screenshot-container"><img src="Screenshot (72).jpg" class="app-screenshot"><div class="screenshot-label">Main Workspace</div></div>
+                    <div class="screenshot-container"><img src="Screenshot (71).jpg" class="app-screenshot"><div class="screenshot-label">Patterning Engine</div></div>
+                    <div class="screenshot-container"><img src="Screenshot (73).jpg" class="app-screenshot"><div class="screenshot-label">Final Visualization</div></div>
+                    <div class="screenshot-container"><img src="Screenshot (74).png" class="app-screenshot"><div class="screenshot-label">Fabric Requirements</div></div>
+                    <div class="screenshot-container"><img src="Screenshot (75).png" class="app-screenshot"><div class="screenshot-label">Assembly Instructions</div></div>
+                    <div class="screenshot-container"><img src="Screenshot (76).png" class="app-screenshot"><div class="screenshot-label">Visual Assembly Map</div></div>
                 </div>
 
                 <div id="mac" class="gallery-grid">
-                    <div class="screenshot-container"><img src="mac-screenshot.png" class="app-screenshot"><div class="screenshot-label">Project Start</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot1.png" class="app-screenshot"><div class="screenshot-label">Active Canvas</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot2.png" class="app-screenshot"><div class="screenshot-label">Sectioning</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot3.png" class="app-screenshot"><div class="screenshot-label">Pattern Review</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot4.png" class="app-screenshot"><div class="screenshot-label">Fabric List Modal</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot5.png" class="app-screenshot"><div class="screenshot-label">Step-by-Step Directions</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot6.png" class="app-screenshot"><div class="screenshot-label">Visual Guide</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot7.png" class="app-screenshot"><div class="screenshot-label">FPP Templates</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot8.png" class="app-screenshot"><div class="screenshot-label">Cutting Templates</div></div>
-                    <div class="screenshot-container"><img src="mac-screenshot9.png" class="app-screenshot"><div class="screenshot-label">Label Management</div></div>
+                    <div class="screenshot-container"><img src="ballerina 2.jpg" class="app-screenshot"><div class="screenshot-label">Project Start</div></div>
+                    <div class="screenshot-container"><img src="mac-screenshot4.jpeg" class="app-screenshot"><div class="screenshot-label">Fabric Requirements</div></div>
                 </div>
             </div>
         </section>
@@ -263,8 +270,21 @@
         <section id="story" class="story-section">
             <div class="story-container">
                 <h2>Why I Built This</h2>
+                <p class="proof-subtitle">From Inspiration to Finished Quilt</p>
+                
+                <div class="story-proof-visual">
+                    <div class="story-img-card">
+                        <img src="The Dark Horse.jpg" alt="Original Dark Horse Inspiration Photo">
+                        <p>1. The Original Photo</p>
+                    </div>
+                    <div class="story-img-card">
+                        <img src="Ringo.jpg" alt="Finished Ringo Horse Quilt">
+                        <p>2. The Finished Masterpiece</p>
+                    </div>
+                </div>
+
                 <div class="story-content">
-                    <p>I love Foundation Paper Piecing, but for a long time, the design process felt like a chore. I wanted to turn my favorite photos and sketches into patterns, but I found myself jumping between three or four different applications just to get a single block ready to sew.</p>
+                    <p>I love Foundation Paper Piecing, but for a long time, the design process felt like a chore. I wanted to turn my favorite photos of my horse, Ringo, into patterns, but I found myself jumping between three or four different applications just to get a single block ready to sew.</p>
                     <p><strong>I was frustrated and disappointed.</strong> I would find one feature I loved in one app, but then I'd have to switch to another for the assembly instructions, and yet another to handle the fabric matching. I couldn't find everything I wanted in one place.</p>
                     <p>I realized that if I wanted a tool that handles the math, the Y-seam elimination, the fabric swatching, and the technical layout all at once, I would have to build it myself. </p>
                     <p>Fern Mountain Quilt Architect was born out of that frustration. It’s the "all-in-one" tool I always wished I had—built so we can spend less time fighting with software and more time where it belongs: <strong>sewing and enjoying our creations.</strong></p>
