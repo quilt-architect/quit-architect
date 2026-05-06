@@ -144,6 +144,30 @@
             font-weight: bold;
         }
 
+        /* NEW FOOTER STYLES */
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            margin-top: 40px;
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             header { padding: 10px 20px; flex-direction: column; gap: 10px; }
             .hero h1 { font-size: 2.2rem; }
@@ -236,6 +260,11 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>Questions or suggestions? Contact us at: <a href="mailto:info@fernmountainfollies.com">info@fernmountainfollies.com</a></p>
+        <p>&copy; 2026 Fern Mountain Follies. All rights reserved.</p>
+    </footer>
 
     <script>
         function openTab(evt, platform) {
